@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aptitude Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- TEST SECTION -->
+
+        <div class="test-container">
+
+            <h1>Aptitude Test</h1>
+
+            <div class="timer" id="timer">
+                Time Remaining: 20:00
+            </div>
+
+            <p id="question-number">
+                Question 1 of 20
+            </p>
+
+            <h2 id="question"></h2>
+
+            <div class="options" id="options"></div>
+
+            <div class="navigation">
+
+                <button onclick="previousQuestion()">
+                    Previous
+                </button>
+
+                <button onclick="nextQuestion()">
+                    Next
+                </button>
+
+            </div>
+
+            <button class="submit-button" onclick="submitTest()">
+                Submit Test
+            </button>
+
+        </div>
+
+
+        <!-- QUESTION PALETTE -->
+
+        <div class="palette-container">
+
+            <h3>Questions</h3>
+
+            <div id="question-palette"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div id="result" class="result-container">
+
+        <h1>Test Result</h1>
+
+        <p id="answered"></p>
+
+        <p id="skipped"></p>
+
+        <p id="correct"></p>
+
+        <p id="wrong"></p>
+
+        <h2 id="score"></h2>
+
+        <h2 id="percentage"></h2>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
