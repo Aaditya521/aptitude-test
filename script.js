@@ -1,174 +1,573 @@
+// ================= TEST SETTINGS =================
+
+const MARKS_PER_QUESTION = 2;
+const TEST_TIME_MINUTES = 60;
+
+
+// ================= QUESTIONS =================
+
 const questions = [
 
     {
-        question: "If 20% of a number is 50, what is the number?",
-        options: ["100", "200", "250", "300"],
-        answer: "250"
+        question: "Which keyword is used to define a function in Python?",
+        options: ["function", "define", "def", "fun"],
+        answer: 2
     },
 
     {
-        question: "What is 25% of 200?",
-        options: ["25", "40", "50", "75"],
-        answer: "50"
+        question: "Which data type is used to store True or False?",
+        options: ["int", "str", "bool", "float"],
+        answer: 2
     },
 
     {
-        question: "A train travels 60 km in 1 hour. How far will it travel in 3 hours?",
-        options: ["120 km", "150 km", "180 km", "200 km"],
-        answer: "180 km"
+        question: "Which symbol is used for comments in Python?",
+        options: ["//", "/*", "#", "--"],
+        answer: 2
     },
 
     {
-        question: "What is 15 + 25?",
-        options: ["30", "35", "40", "45"],
-        answer: "40"
+        question: "Which function is used to take input from the user?",
+        options: ["get()", "input()", "scan()", "read()"],
+        answer: 1
     },
 
     {
-        question: "What is 12 × 8?",
-        options: ["86", "96", "106", "116"],
-        answer: "96"
+        question: "Which function is used to display output in Python?",
+        options: ["display()", "show()", "print()", "output()"],
+        answer: 2
     },
 
     {
-        question: "What is 144 ÷ 12?",
-        options: ["10", "11", "12", "14"],
-        answer: "12"
+        question: "Which operator is used for exponentiation in Python?",
+        options: ["^", "//", "**", "%%"],
+        answer: 2
     },
 
     {
-        question: "If a pen costs ₹20, how much will 5 pens cost?",
-        options: ["₹80", "₹90", "₹100", "₹120"],
-        answer: "₹100"
+        question: "What is the correct extension of a Python file?",
+        options: [".java", ".py", ".python", ".pt"],
+        answer: 1
     },
 
     {
-        question: "What is the average of 10, 20 and 30?",
-        options: ["15", "20", "25", "30"],
-        answer: "20"
+        question: "Which keyword is used for a conditional statement?",
+        options: ["when", "check", "if", "condition"],
+        answer: 2
     },
 
     {
-        question: "A man buys an item for ₹500 and sells it for ₹600. What is his profit?",
-        options: ["₹50", "₹100", "₹150", "₹200"],
-        answer: "₹100"
+        question: "Which keyword is used when the condition is false?",
+        options: ["otherwise", "else", "false", "not"],
+        answer: 1
     },
 
     {
-        question: "What is 10% of 500?",
-        options: ["25", "50", "75", "100"],
-        answer: "50"
+        question: "Which loop is used to iterate over a sequence?",
+        options: ["for", "repeat", "loop", "iterate"],
+        answer: 0
     },
 
     {
-        question: "If 5 workers complete a job in 10 days, which factor generally affects the time needed?",
-        options: ["Number of workers", "Color of tools", "Day of the week", "Worker's name"],
-        answer: "Number of workers"
+        question: "Which keyword is used to exit a loop?",
+        options: ["stop", "exit", "break", "close"],
+        answer: 2
     },
 
     {
-        question: "What is the square of 15?",
-        options: ["125", "200", "225", "250"],
-        answer: "225"
+        question: "Which keyword skips the current iteration?",
+        options: ["skip", "continue", "pass", "next"],
+        answer: 1
     },
 
     {
-        question: "What is the next number: 2, 4, 6, 8, ___?",
-        options: ["9", "10", "11", "12"],
-        answer: "10"
+        question: "Which data structure stores multiple values in order?",
+        options: ["set", "tuple", "list", "dictionary"],
+        answer: 2
     },
 
     {
-        question: "If 3x = 21, what is x?",
-        options: ["5", "6", "7", "8"],
-        answer: "7"
+        question: "Which data structure stores key-value pairs?",
+        options: ["list", "dictionary", "tuple", "set"],
+        answer: 1
     },
 
     {
-        question: "What is the simple interest on ₹1000 at 10% per year for 1 year?",
-        options: ["₹50", "₹100", "₹150", "₹200"],
-        answer: "₹100"
+        question: "Which symbol is used to create a list?",
+        options: ["()", "{}", "[]", "<>"],
+        answer: 2
     },
 
     {
-        question: "A car travels 120 km in 2 hours. What is its average speed?",
-        options: ["40 km/h", "50 km/h", "60 km/h", "80 km/h"],
-        answer: "60 km/h"
+        question: "Which symbol is used to create a tuple?",
+        options: ["[]", "{}", "() ", "<>"],
+        answer: 2
     },
 
     {
-        question: "What is 3/4 of 100?",
-        options: ["25", "50", "75", "80"],
-        answer: "75"
+        question: "Which data type does not allow duplicate values?",
+        options: ["list", "tuple", "set", "string"],
+        answer: 2
     },
 
     {
-        question: "If the ratio of boys to girls is 2:3 and there are 10 boys, how many girls are there?",
-        options: ["12", "15", "18", "20"],
-        answer: "15"
+        question: "What does len() return?",
+        options: [
+            "The value",
+            "The length",
+            "The data type",
+            "The memory address"
+        ],
+        answer: 1
     },
 
     {
-        question: "What is 30% of 300?",
-        options: ["60", "90", "120", "150"],
-        answer: "90"
+        question: "Which function converts a value to integer?",
+        options: ["str()", "float()", "int()", "integer()"],
+        answer: 2
     },
 
     {
-        question: "A number is increased from 100 to 120. What is the percentage increase?",
-        options: ["10%", "15%", "20%", "25%"],
-        answer: "20%"
+        question: "Which function converts a value to string?",
+        options: ["string()", "str()", "text()", "char()"],
+        answer: 1
+    },
+
+    {
+        question: "What is cybersecurity?",
+        options: [
+            "Protecting computer systems and networks",
+            "Creating websites",
+            "Playing games",
+            "Designing graphics"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What does CIA stand for in cybersecurity?",
+        options: [
+            "Computer Internet Access",
+            "Confidentiality, Integrity, Availability",
+            "Cyber Intelligence Agency",
+            "Central Internet Authority"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is phishing?",
+        options: [
+            "A network cable",
+            "A type of database",
+            "A social engineering attack",
+            "A programming language"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is malware?",
+        options: [
+            "Malicious software",
+            "Network hardware",
+            "Antivirus software",
+            "Operating system"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Which malware can replicate itself?",
+        options: [
+            "Trojan",
+            "Virus",
+            "Spyware",
+            "Adware"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is ransomware?",
+        options: [
+            "Software that improves performance",
+            "Malware that encrypts files and demands payment",
+            "A firewall",
+            "A network protocol"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is a firewall?",
+        options: [
+            "A programming language",
+            "A security system that filters network traffic",
+            "A type of malware",
+            "A password manager"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What does VPN stand for?",
+        options: [
+            "Virtual Private Network",
+            "Very Protected Network",
+            "Virtual Public Network",
+            "Verified Private Node"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Which protocol is commonly used for secure web browsing?",
+        options: [
+            "HTTP",
+            "FTP",
+            "HTTPS",
+            "SMTP"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "Which protocol is used to resolve domain names to IP addresses?",
+        options: [
+            "DNS",
+            "DHCP",
+            "FTP",
+            "SSH"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is an IP address?",
+        options: [
+            "A unique address used to identify a device on a network",
+            "A password",
+            "A website",
+            "A software application"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What does MAC address identify?",
+        options: [
+            "A website",
+            "A network interface",
+            "A password",
+            "A domain"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is DoS attack?",
+        options: [
+            "Data Operating System",
+            "Denial of Service",
+            "Domain Operating Security",
+            "Digital Online Service"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is DDoS attack?",
+        options: [
+            "Distributed Denial of Service",
+            "Direct Data Operating System",
+            "Digital Denial of Security",
+            "Distributed Data Online Service"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is brute force attack?",
+        options: [
+            "Trying many possible passwords",
+            "Stealing hardware",
+            "Blocking a website",
+            "Encrypting data"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is dictionary attack?",
+        options: [
+            "Using random IP addresses",
+            "Using a list of commonly used passwords",
+            "Scanning ports",
+            "Encrypting files"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is password spraying?",
+        options: [
+            "Using one password against many accounts",
+            "Using many passwords against one account",
+            "Changing passwords frequently",
+            "Encrypting passwords"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is credential stuffing?",
+        options: [
+            "Creating strong passwords",
+            "Using stolen username-password combinations",
+            "Scanning a network",
+            "Blocking accounts"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is ARP spoofing?",
+        options: [
+            "Attacking DNS servers",
+            "Sending fake ARP messages",
+            "Encrypting ARP packets",
+            "Blocking HTTP traffic"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is DNS spoofing?",
+        options: [
+            "Sending fake DNS responses",
+            "Changing MAC addresses",
+            "Blocking ports",
+            "Encrypting DNS"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is IP spoofing?",
+        options: [
+            "Changing the source IP address",
+            "Changing the password",
+            "Changing the MAC address",
+            "Changing the DNS server"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is sniffing?",
+        options: [
+            "Capturing and analyzing network traffic",
+            "Deleting files",
+            "Creating passwords",
+            "Blocking websites"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is MITM attack?",
+        options: [
+            "Man In The Machine",
+            "Man In The Middle",
+            "Machine In The Middle",
+            "Middle Internet Machine"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is hashing?",
+        options: [
+            "Converting data into a fixed-size value",
+            "Deleting data",
+            "Sending data",
+            "Compressing files"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Which of the following is a hashing algorithm?",
+        options: [
+            "HTTP",
+            "FTP",
+            "SHA-256",
+            "DNS"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is encryption?",
+        options: [
+            "Converting readable data into unreadable form",
+            "Deleting data",
+            "Copying data",
+            "Opening files"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is authentication?",
+        options: [
+            "Verifying the identity of a user",
+            "Deleting a user",
+            "Creating a network",
+            "Scanning ports"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is authorization?",
+        options: [
+            "Checking who the user is",
+            "Giving permissions to an authenticated user",
+            "Encrypting passwords",
+            "Blocking a user"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is MFA?",
+        options: [
+            "Multiple File Access",
+            "Multi-Factor Authentication",
+            "Main Firewall Access",
+            "Multiple Firewall Authentication"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "Which command is commonly used to test network connectivity?",
+        options: [
+            "ping",
+            "copy",
+            "mkdir",
+            "delete"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Which tool is commonly used for network scanning?",
+        options: [
+            "Nmap",
+            "Notepad",
+            "Calculator",
+            "Paint"
+        ],
+        answer: 0
     }
 
 ];
 
 
+// ================= VARIABLES =================
+
 let currentQuestion = 0;
 
-let userAnswers = [];
+let userAnswers = new Array(questions.length).fill(null);
+
+let timeLeft = TEST_TIME_MINUTES * 60;
+
+let timerInterval = null;
+
+let testStarted = false;
+
+let studentName = "";
+
+let rollNumber = "";
 
 
-// TIMER
-let timeLeft = 20 * 60;
+// ================= START TEST =================
+
+function startTest() {
+
+    const nameInput = document.getElementById("student-name");
+    const rollInput = document.getElementById("roll-number");
+    const error = document.getElementById("start-error");
+
+    studentName = nameInput.value.trim();
+    rollNumber = rollInput.value.trim();
+
+    if (studentName === "" || rollNumber === "") {
+
+        error.innerText = "Please enter your name and roll number.";
+
+        return;
+    }
+
+    error.innerText = "";
+
+    document.getElementById("start-screen").style.display = "none";
+
+    document.getElementById("test-screen").style.display = "flex";
+
+    currentQuestion = 0;
+
+    userAnswers = new Array(questions.length).fill(null);
+
+    timeLeft = TEST_TIME_MINUTES * 60;
+
+    testStarted = true;
+
+    createQuestionPalette();
+
+    displayQuestion();
+
+    startTimer();
+}
 
 
-// Load Question
-function loadQuestion() {
+// ================= DISPLAY QUESTION =================
 
-    const q = questions[currentQuestion];
+function displayQuestion() {
 
+    const question = questions[currentQuestion];
 
     document.getElementById("question-number").innerText =
         `Question ${currentQuestion + 1} of ${questions.length}`;
 
-
     document.getElementById("question").innerText =
-        q.question;
+        question.question;
 
-
-    const optionsContainer =
-        document.getElementById("options");
+    const optionsContainer = document.getElementById("options");
 
     optionsContainer.innerHTML = "";
 
 
-    q.options.forEach(function(option) {
+    question.options.forEach((option, index) => {
 
         const button = document.createElement("button");
 
         button.innerText = option;
 
+        button.className = "option-button";
 
-        if (userAnswers[currentQuestion] === option) {
 
+        if (userAnswers[currentQuestion] === index) {
             button.classList.add("selected");
-
         }
 
 
-        button.onclick = function() {
+        button.onclick = function () {
 
-            selectAnswer(option);
+            selectAnswer(index);
 
         };
 
@@ -178,54 +577,58 @@ function loadQuestion() {
     });
 
 
-    updateQuestionPalette();
+    updatePalette();
+
+    updateNavigationButtons();
+}
+
+
+// ================= SELECT ANSWER =================
+
+function selectAnswer(answerIndex) {
+
+    userAnswers[currentQuestion] = answerIndex;
+
+    displayQuestion();
 
 }
 
 
-// Select Answer
-function selectAnswer(option) {
+// ================= PREVIOUS QUESTION =================
 
-    userAnswers[currentQuestion] = option;
-
-    loadQuestion();
-
-}
-
-
-// Next
-function nextQuestion() {
-
-    if (currentQuestion < questions.length - 1) {
-
-        currentQuestion++;
-
-        loadQuestion();
-
-    }
-
-}
-
-
-// Previous
 function previousQuestion() {
 
     if (currentQuestion > 0) {
 
         currentQuestion--;
 
-        loadQuestion();
+        displayQuestion();
 
     }
 
 }
 
 
-// Create Question Palette
+// ================= NEXT QUESTION =================
+
+function nextQuestion() {
+
+    if (currentQuestion < questions.length - 1) {
+
+        currentQuestion++;
+
+        displayQuestion();
+
+    }
+
+}
+
+
+// ================= QUESTION PALETTE =================
+
 function createQuestionPalette() {
 
-    const palette =
-        document.getElementById("question-palette");
+    const palette = document.getElementById("question-palette");
 
     palette.innerHTML = "";
 
@@ -236,14 +639,14 @@ function createQuestionPalette() {
 
         button.innerText = i + 1;
 
-        button.classList.add("question-button");
+        button.className = "palette-button";
 
 
-        button.onclick = function() {
+        button.onclick = function () {
 
             currentQuestion = i;
 
-            loadQuestion();
+            displayQuestion();
 
         };
 
@@ -255,18 +658,25 @@ function createQuestionPalette() {
 }
 
 
-// Update Palette
-function updateQuestionPalette() {
+// ================= UPDATE PALETTE =================
+
+function updatePalette() {
 
     const buttons =
-        document.querySelectorAll(".question-button");
+        document.querySelectorAll(".palette-button");
 
 
-    buttons.forEach(function(button, index) {
-
-        button.classList.remove("current");
+    buttons.forEach((button, index) => {
 
         button.classList.remove("answered");
+        button.classList.remove("current");
+
+
+        if (userAnswers[index] !== null) {
+
+            button.classList.add("answered");
+
+        }
 
 
         if (index === currentQuestion) {
@@ -275,131 +685,256 @@ function updateQuestionPalette() {
 
         }
 
-        else if (userAnswers[index]) {
-
-            button.classList.add("answered");
-
-        }
-
     });
 
 }
 
 
-// TIMER FUNCTION
+// ================= NAVIGATION BUTTONS =================
+
+function updateNavigationButtons() {
+
+    const previousButton =
+        document.getElementById("previous-button");
+
+    const nextButton =
+        document.getElementById("next-button");
+
+
+    if (currentQuestion === 0) {
+
+        previousButton.disabled = true;
+
+    } else {
+
+        previousButton.disabled = false;
+
+    }
+
+
+    if (currentQuestion === questions.length - 1) {
+
+        nextButton.disabled = true;
+
+    } else {
+
+        nextButton.disabled = false;
+
+    }
+
+}
+
+
+// ================= TIMER =================
+
 function startTimer() {
 
-    const timer = document.getElementById("timer");
+    clearInterval(timerInterval);
 
 
-    const interval = setInterval(function() {
-
-        let minutes = Math.floor(timeLeft / 60);
-
-        let seconds = timeLeft % 60;
+    updateTimer();
 
 
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+    timerInterval = setInterval(function () {
 
+        timeLeft--;
 
-        timer.innerText =
-            `Time Remaining: ${minutes}:${seconds}`;
+        updateTimer();
 
 
         if (timeLeft <= 0) {
 
-            clearInterval(interval);
+            clearInterval(timerInterval);
 
-            alert("Time is over! Your test will be submitted.");
+            alert("Time is over! Your test will be submitted automatically.");
 
             submitTest();
 
         }
-
-
-        timeLeft--;
 
     }, 1000);
 
 }
 
 
-// Submit Test
+// ================= UPDATE TIMER =================
+
+function updateTimer() {
+
+    const minutes =
+        Math.floor(timeLeft / 60);
+
+    const seconds =
+        timeLeft % 60;
+
+
+    const formattedMinutes =
+        String(minutes).padStart(2, "0");
+
+    const formattedSeconds =
+        String(seconds).padStart(2, "0");
+
+
+    document.getElementById("timer").innerText =
+        `Time Remaining: ${formattedMinutes}:${formattedSeconds}`;
+
+}
+
+
+// ================= SUBMIT TEST =================
+
 function submitTest() {
 
-    let answered = 0;
-
-    let skipped = 0;
-
-    let correct = 0;
-
-    let wrong = 0;
+    if (!testStarted) {
+        return;
+    }
 
 
-    for (let i = 0; i < questions.length; i++) {
-
-        if (userAnswers[i]) {
-
-            answered++;
+    const unanswered =
+        userAnswers.filter(answer => answer === null).length;
 
 
-            if (userAnswers[i] === questions[i].answer) {
+    if (unanswered > 0 && timeLeft > 0) {
 
-                correct++;
+        const confirmSubmit =
+            confirm(
+                `You have ${unanswered} unanswered question(s).\n\nAre you sure you want to submit the test?`
+            );
 
-            } else {
 
-                wrong++;
+        if (!confirmSubmit) {
 
-            }
-
-        } else {
-
-            skipped++;
+            return;
 
         }
 
     }
 
 
-    let score = correct * 2;
+    clearInterval(timerInterval);
 
-    let totalMarks = questions.length * 2;
-
-    let percentage = (score / totalMarks) * 100;
+    testStarted = false;
 
 
-    document.getElementById("answered").innerText =
-        "Answered: " + answered;
-
-    document.getElementById("skipped").innerText =
-        "Skipped: " + skipped;
-
-    document.getElementById("correct").innerText =
-        "Correct: " + correct;
-
-    document.getElementById("wrong").innerText =
-        "Wrong: " + wrong;
-
-    document.getElementById("score").innerText =
-        "Score: " + score + " / " + totalMarks;
-
-    document.getElementById("percentage").innerText =
-        "Percentage: " + percentage + "%";
-
-
-    document.querySelector(".main-container").style.display =
-        "none";
-
-    document.getElementById("result").style.display =
-        "block";
+    calculateResult();
 
 }
 
 
-// Start Test
-createQuestionPalette();
+// ================= CALCULATE RESULT =================
 
-loadQuestion();
+function calculateResult() {
 
-startTimer();
+    let answeredCount = 0;
+
+    let correctCount = 0;
+
+    let wrongCount = 0;
+
+
+    questions.forEach((question, index) => {
+
+        const userAnswer = userAnswers[index];
+
+
+        if (userAnswer !== null) {
+
+            answeredCount++;
+
+
+            if (userAnswer === question.answer) {
+
+                correctCount++;
+
+            } else {
+
+                wrongCount++;
+
+            }
+
+        }
+
+    });
+
+
+    const skippedCount =
+        questions.length - answeredCount;
+
+
+    const score =
+        correctCount * MARKS_PER_QUESTION;
+
+
+    const totalMarks =
+        questions.length * MARKS_PER_QUESTION;
+
+
+    const percentage =
+        (score / totalMarks) * 100;
+
+
+    showResult(
+        answeredCount,
+        skippedCount,
+        correctCount,
+        wrongCount,
+        score,
+        totalMarks,
+        percentage
+    );
+
+}
+
+
+// ================= SHOW RESULT =================
+
+function showResult(
+    answeredCount,
+    skippedCount,
+    correctCount,
+    wrongCount,
+    score,
+    totalMarks,
+    percentage
+) {
+
+    document.getElementById("test-screen").style.display =
+        "none";
+
+
+    document.getElementById("result-screen").style.display =
+        "block";
+
+
+    document.getElementById("result-name").innerText =
+        studentName;
+
+
+    document.getElementById("result-roll").innerText =
+        rollNumber;
+
+
+    document.getElementById("answered").innerText =
+        `Answered: ${answeredCount}`;
+
+
+    document.getElementById("skipped").innerText =
+        `Skipped: ${skippedCount}`;
+
+
+    document.getElementById("correct").innerText =
+        `Correct: ${correctCount}`;
+
+
+    document.getElementById("wrong").innerText =
+        `Wrong: ${wrongCount}`;
+
+
+    document.getElementById("score").innerText =
+        `Score: ${score} / ${totalMarks}`;
+
+
+    document.getElementById("percentage").innerText =
+        `Percentage: ${percentage.toFixed(2)}%`;
+
+}
