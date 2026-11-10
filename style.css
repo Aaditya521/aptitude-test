@@ -5,9 +5,6 @@ body {
     padding: 0;
 }
 
-
-/* Main Layout */
-
 .main-container {
     display: flex;
     justify-content: center;
@@ -16,9 +13,6 @@ body {
     margin-top: 60px;
     padding: 0 20px;
 }
-
-
-/* Test */
 
 .test-container {
     width: 600px;
@@ -29,18 +23,8 @@ body {
     box-sizing: border-box;
 }
 
-
-h1 {
-    text-align: center;
-}
-
-
-#question-number {
-    color: gray;
-}
-
-
-/* Timer */
+h1 { text-align: center; }
+#question-number { color: gray; }
 
 .timer {
     text-align: center;
@@ -49,16 +33,7 @@ h1 {
     margin: 15px 0;
 }
 
-
-/* Question */
-
-#question {
-    margin-top: 25px;
-    line-height: 1.5;
-}
-
-
-/* Options */
+#question { margin-top: 25px; line-height: 1.5; }
 
 .options {
     display: flex;
@@ -66,7 +41,6 @@ h1 {
     gap: 12px;
     margin-top: 25px;
 }
-
 
 .options button {
     padding: 14px;
@@ -78,19 +52,11 @@ h1 {
     font-size: 16px;
 }
 
-
-.options button:hover {
-    background: #f0f0f0;
-}
-
-
+.options button:hover { background: #f0f0f0; }
 .options button.selected {
     background: #d9f2ff;
     border: 2px solid #0077cc;
 }
-
-
-/* Navigation */
 
 .navigation {
     display: flex;
@@ -99,16 +65,12 @@ h1 {
     margin-top: 30px;
 }
 
-
 .navigation button {
     padding: 10px 25px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
 }
-
-
-/* Submit */
 
 .submit-button {
     width: 100%;
@@ -122,13 +84,7 @@ h1 {
     font-size: 16px;
 }
 
-
-.submit-button:hover {
-    background: #444;
-}
-
-
-/* Question Palette */
+.submit-button:hover { background: #444; }
 
 .palette-container {
     width: 220px;
@@ -138,19 +94,13 @@ h1 {
     box-sizing: border-box;
 }
 
-
-.palette-container h3 {
-    margin-top: 0;
-    text-align: center;
-}
-
+.palette-container h3 { margin-top: 0; text-align: center; }
 
 #question-palette {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
 }
-
 
 .question-button {
     padding: 10px;
@@ -160,20 +110,15 @@ h1 {
     cursor: pointer;
 }
 
-
 .question-button.current {
     background: #d9f2ff !important;
     border: 3px solid #0077cc !important;
 }
 
-
 .question-button.answered {
     background: #d4edda !important;
     border: 3px solid #28a745 !important;
 }
-
-
-/* Result */
 
 .result-container {
     display: none;
@@ -186,74 +131,24 @@ h1 {
     box-sizing: border-box;
 }
 
-
-/* Mobile */
-
 @media (max-width: 768px) {
-
     .main-container {
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
         padding: 0 10px;
     }
-
-
-    .test-container {
-        width: 100%;
-        padding: 20px;
-    }
-
-
-    .palette-container {
-        width: 100%;
-        max-width: 600px;
-    }
-
-
-    #question-palette {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-
-    .navigation button {
-        flex: 1;
-    }
-
-
-    .options button {
-        font-size: 15px;
-    }
-
+    .test-container { width: 100%; padding: 20px; }
+    .palette-container { width: 100%; max-width: 600px; }
+    #question-palette { grid-template-columns: repeat(5, 1fr); }
+    .navigation button { flex: 1; }
+    .options button { font-size: 15px; }
 }
 
-
-/* Small Mobile */
-
 @media (max-width: 400px) {
-
-    .test-container {
-        padding: 15px;
-    }
-
-
-    h1 {
-        font-size: 24px;
-    }
-
-
-    #question {
-        font-size: 19px;
-    }
-
-
-    .options button {
-        padding: 12px;
-    }
-
-
-    .navigation button {
-        padding: 10px;
-    }
-
+    .test-container { padding: 15px; }
+    h1 { font-size: 24px; }
+    #question { font-size: 19px; }
+    .options button { padding: 12px; }
+    .navigation button { padding: 10px; }
 }
