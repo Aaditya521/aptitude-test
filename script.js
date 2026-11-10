@@ -1,7 +1,7 @@
 // ================= TEST SETTINGS =================
 
 const MARKS_PER_QUESTION = 2;
-const TEST_TIME_MINUTES = 60;
+const TEST_TIME_MINUTES = 180;
 
 
 // ================= QUESTIONS =================
@@ -1390,7 +1390,7 @@ function startTest() {
 
     userAnswers = new Array(questions.length).fill(null);
 
-    timeLeft = TEST_TIME_MINUTES * 60;
+    timeLeft = TEST_TIME_MINUTES * 180;
 
     testStarted = true;
 
@@ -1630,10 +1630,10 @@ function startTimer() {
 function updateTimer() {
 
     const minutes =
-        Math.floor(timeLeft / 60);
+        Math.floor(timeLeft / 190);
 
     const seconds =
-        timeLeft % 60;
+        timeLeft % 190;
 
 
     const formattedMinutes =
