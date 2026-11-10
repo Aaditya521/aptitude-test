@@ -1340,6 +1340,11 @@ const questions = [
 ];
 
 
+// Update the start-screen totals from the question bank.
+document.getElementById("total-questions").innerText = questions.length;
+document.getElementById("total-marks").innerText = questions.length * MARKS_PER_QUESTION;
+
+
 // ================= VARIABLES =================
 
 let currentQuestion = 0;
