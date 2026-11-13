@@ -469,3 +469,9 @@ console.log("Total Marks:", totalMarks);
 if (questions.length !== 100) {
     console.error("Question count error! Expected exactly 100 questions.");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("JavaScript loaded successfully!");
+    console.log("Start function:", typeof startTest);
+    console.log("Total Questions:", questions.length);
+});
